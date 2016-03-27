@@ -35,6 +35,7 @@ public class PropertiesFile {
 			MONGODB_USERNAME = prop.getProperty("MONGODB_USERNAME");
 			MONGODB_PASSWORD = prop.getProperty("MONGODB_PASSWORD");
 			SNMP_SERVER = prop.getProperty("SNMP_SERVER");
+			MEASURE_INTERVAL = Integer.valueOf(prop.getProperty("MEASURE_INTERVAL"));
 			
 
 		} catch (IOException e) {
@@ -56,5 +57,7 @@ public class PropertiesFile {
 	public static String MONGODB_USERNAME;
 	public static String MONGODB_PASSWORD;
 	public static String SNMP_SERVER;
+	public static int MEASURE_INTERVAL;
+	
 
 }
