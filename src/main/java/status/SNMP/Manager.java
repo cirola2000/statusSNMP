@@ -128,9 +128,10 @@ public class Manager {
 									e.printStackTrace();
 								}
 							}
-
+							
+							String time = String.valueOf(System.currentTimeMillis());
 							for (Measure m : measures.values()) {
-								m.setTimestamp(String.valueOf(System.currentTimeMillis()));
+								m.setTimestamp(time);
 								m.insert(false);
 							}
 
