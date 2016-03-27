@@ -39,7 +39,7 @@ public class Manager {
 				public void run() {
 					while (true) {
 						try {
-							Thread.sleep(1000 * 20);
+							Thread.sleep(1000 * 120);
 							System.out.println("Updating client list...");
 							SNMPManager client = new SNMPManager(PropertiesFile.SNMP_SERVER);
 							nameOIDs = client.getOIDNames();
@@ -136,7 +136,7 @@ public class Manager {
 							}
 
 							// make a measure every 10 seconds
-							Thread.sleep(1000 * 10);
+							Thread.sleep(1000 * PropertiesFile.MEASURE_INTERVAL);
 
 						} catch (Exception e) {
 							e.printStackTrace();
