@@ -21,6 +21,8 @@ public class Manager {
 	static String txOID = ".1.3.6.1.2.1.2.2.1.16.";
 
 	public static void main(String[] args) {
+		PropertiesFile p = new PropertiesFile();
+		p.loadProperties();
 		try {
 			SNMPManager client = new SNMPManager(PropertiesFile.SNMP_SERVER);
 
@@ -39,7 +41,7 @@ public class Manager {
 						try {
 							Thread.sleep(1000 * 20);
 							System.out.println("Updating client list...");
-							SNMPManager client = new SNMPManager("udp:molettta.no-ip.biz/161");
+							SNMPManager client = new SNMPManager(PropertiesFile.SNMP_SERVER);
 							nameOIDs = client.getOIDNames();
 
 							measures = new ConcurrentHashMap<String, Measure>();
